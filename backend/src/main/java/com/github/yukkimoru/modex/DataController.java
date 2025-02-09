@@ -4,19 +4,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @RestController
 public class DataController {
 
-    public record Data(String name, int uv, int pv, int amt) { // クラスをパブリックに変更
-    }
-
     @GetMapping("/api/data")
-    public List<Data> getData() {
-        return List.of(
-            new Data("Page A", 10, 400, 100),
-            new Data("Page B", 100, 200, 200),
-            new Data("Page C", 300, 10, 300)
-        );
+    public List<DataPoint> getData() {
+        return IntStream.rangeClosed(1, 10)
+                .mapToObj(i -> new DataPoint(i, Math.random() * 10))
+                .collect(Collectors.toList());
     }
 }
+

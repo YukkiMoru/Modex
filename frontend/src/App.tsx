@@ -52,14 +52,12 @@ function RadialGaugeComponent() {
     );
 }
 
-function LineChartComponent({ data }: { data: never[] }) {
+function LineChartComponent({ data }: { data: { x: number, y: number }[] }) {
     return (
         <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-            <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-            <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
-            <Line type="monotone" dataKey="amt" stroke="#ffc658" />
+            <Line type="monotone" dataKey="y" stroke="#8884d8" isAnimationActive={false} />
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="x" />
             <YAxis />
         </LineChart>
     );
@@ -88,6 +86,19 @@ const App = () => {
                 <pre>{rawData}</pre>
             </Container>
             <Footer />
+        {/*    <LineChart width={500} height={300} data={[*/}
+        {/*    { x: 1, y: 2 },*/}
+        {/*    { x: 2, y: 5.5 },*/}
+        {/*    { x: 3, y: 2 },*/}
+        {/*    { x: 5, y: 8.5 },*/}
+        {/*    { x: 8, y: 1.5 },*/}
+        {/*    { x: 10, y: 5 }*/}
+        {/*]}>*/}
+        {/*    <Line type="monotone" dataKey="y" stroke="#8884d8" />*/}
+        {/*    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />*/}
+        {/*    <XAxis dataKey="x" />*/}
+        {/*    <YAxis />*/}
+        {/*</LineChart>*/}
         </div>
     );
 }
