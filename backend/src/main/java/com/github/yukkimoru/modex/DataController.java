@@ -14,7 +14,7 @@ public class DataController {
     @GetMapping("/api/data")
     public List<Data> getData() {
         return List.of(
-            new Data("Page A", 400, 400, 100),
+            new Data("Page A", 10, 400, 100),
             new Data("Page B", 100, 200, 200),
             new Data("Page C", 300, 10, 300)
         );
