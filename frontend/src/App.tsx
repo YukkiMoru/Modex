@@ -11,7 +11,7 @@ const App = () => {
     const [rawData, setRawData] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:9090/api/data')
+        fetch('http://localhost:9091/api/data')
             .then(response => response.json())
             .then(data => {
                 setData(data);
