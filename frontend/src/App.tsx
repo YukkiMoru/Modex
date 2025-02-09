@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { IgrRadialGauge, IgrRadialGaugeModule } from 'igniteui-react-gauges';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { LineChart } from '@mui/x-charts/LineChart';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -53,13 +53,16 @@ function RadialGaugeComponent() {
 }
 
 function LineChartComponent({ data }: { data: { x: number, y: number }[] }) {
+    const xAxisData = data.map(point => point.x);
+    const seriesData = data.map(point => point.y);
+
     return (
-        <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-            <Line type="monotone" dataKey="y" stroke="#8884d8" isAnimationActive={false} />
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="x" />
-            <YAxis />
-        </LineChart>
+        <LineChart
+            xAxis={[{ data: xAxisData }]}
+            series={[{ data: seriesData }]}
+            width={600}
+            height={300}
+        />
     );
 }
 
