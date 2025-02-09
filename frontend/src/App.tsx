@@ -11,6 +11,30 @@ import Box from '@mui/material/Box';
 
 IgrRadialGaugeModule.register();
 
+function Header() {
+    return (
+        <AppBar position="static">
+            <Toolbar>
+                <Typography variant="h6">
+                    ウェブサイトのタイトル
+                </Typography>
+            </Toolbar>
+        </AppBar>
+    );
+}
+
+function Footer() {
+    return (
+        <Box mt={5}>
+            <Typography variant="body2" color="textSecondary" align="center">
+                {'Copyright © '}
+                <a href="https://github.com/YukkiMoru/Modex" target="_blank" rel="noopener noreferrer">Modex</a> {new Date().getFullYear()}
+                {'.'}
+            </Typography>
+        </Box>
+    );
+}
+
 const App = () => {
     const [data, setData] = useState([]);
     const [rawData, setRawData] = useState('');
@@ -37,15 +61,8 @@ const App = () => {
 
     return (
         <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h6">
-                        ウェブサイトのタイトル
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <Header />
             <Container>
-                <h1>こんにちは</h1>
                 <IgrRadialGauge
                     height="300px"
                     width="300px"
@@ -62,13 +79,7 @@ const App = () => {
                 <Button variant="contained">Hello world</Button>
                 <pre>{rawData}</pre>
             </Container>
-            <Box mt={5}>
-                <Typography variant="body2" color="textSecondary" align="center">
-                    {'Copyright © '}
-                    <a href="https://github.com/YukkiMoru/Modex" target="_blank" rel="noopener noreferrer">Modex</a> {new Date().getFullYear()}
-                    {'.'}
-                </Typography>
-            </Box>
+            <Footer />
         </div>
     );
 }
