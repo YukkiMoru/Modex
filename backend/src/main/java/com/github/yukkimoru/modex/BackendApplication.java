@@ -10,5 +10,14 @@ public class BackendApplication {
         SpringApplication.run(BackendApplication.class, args);
     }
 
+    public static class Calculator {
+        public int add(int a, int b) {
+            return a + b;
+        }
+
+        public int subtract(int a, int b) {
+            return a - b;
+        }
+    }
 }
 
