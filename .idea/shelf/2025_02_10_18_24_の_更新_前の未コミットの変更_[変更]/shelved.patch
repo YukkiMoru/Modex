@@ -1,0 +1,65 @@
+Index: backend/src/main/java/com/github/yukkimoru/modex/sql/connector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/src/main/java/com/github/yukkimoru/modex/sql/connector.java b/backend/src/main/java/com/github/yukkimoru/modex/sql/connector.java
+new file mode 100644
+--- /dev/null	(date 1739172783457)
++++ b/backend/src/main/java/com/github/yukkimoru/modex/sql/connector.java	(date 1739172783457)
+@@ -0,0 +1,4 @@
++package com.github.yukkimoru.modex.sql;
++
++public class connector {
++}
+Index: backend/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=backend\r\n\r\n# backend port\r\nserver.port=9091\r\n\r\n# hot reload\r\nspring.devtools.restart.enabled=true\r\nspring.devtools.livereload.enabled=true
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/backend/src/main/resources/application.properties b/backend/src/main/resources/application.properties
+--- a/backend/src/main/resources/application.properties	(revision af87c620141829120bb221d6d40f40c086fde470)
++++ b/backend/src/main/resources/application.properties	(date 1739173240313)
+@@ -5,4 +5,12 @@
+ 
+ # hot reload
+ spring.devtools.restart.enabled=true
+-spring.devtools.livereload.enabled=true
+\ No newline at end of file
++spring.devtools.livereload.enabled=true
++
++# database
++spring.datasource.url=jdbc:mysql://localhost:9092/temperature
++spring.datasource.username=root
++spring.datasource.password=root
++spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
++spring.jpa.hibernate.ddl-auto=update
++spring.jpa.show-sql=true
+\ No newline at end of file
+Index: backend/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n\tjava\r\n\tid(\"org.springframework.boot\") version \"3.4.2\"\r\n\tid(\"io.spring.dependency-management\") version \"1.1.7\"\r\n\tid(\"org.graalvm.buildtools.native\") version \"0.10.4\"\r\n}\r\n\r\ngroup = \"com.github.YukkiMoru\"\r\nversion = \"0.0.1-SNAPSHOT\"\r\n\r\njava {\r\n\ttoolchain {\r\n\t\tlanguageVersion = JavaLanguageVersion.of(21)\r\n\t}\r\n}\r\n\r\nrepositories {\r\n\tmavenCentral()\r\n}\r\n\r\ndependencies {\r\n\timplementation(\"org.springframework.boot:spring-boot-starter-web\")\r\n\ttestImplementation(\"org.springframework.boot:spring-boot-starter-test\")\r\n\ttestRuntimeOnly(\"org.junit.platform:junit-platform-launcher\")\r\n\tdevelopmentOnly(\"org.springframework.boot:spring-boot-devtools\") // Hot reload\r\n}\r\n\r\ntasks.withType<Test> {\r\n\tuseJUnitPlatform()\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backend/build.gradle.kts b/backend/build.gradle.kts
+--- a/backend/build.gradle.kts	(revision af87c620141829120bb221d6d40f40c086fde470)
++++ b/backend/build.gradle.kts	(date 1739172638703)
+@@ -19,9 +19,12 @@
+ }
+ 
+ dependencies {
+-	implementation("org.springframework.boot:spring-boot-starter-web")
++	implementation("org.springframework.boot:spring-boot-starter-web") // Spring-boot
++	implementation("org.springframework.boot:spring-boot-starter-jdbc") // Mysqlに使用
++	runtimeOnly("com.mysql:mysql-connector-j")  // Mysql
++
++	testRuntimeOnly("org.junit.platform:junit-platform-launcher") // Junit5
+ 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+ 	developmentOnly("org.springframework.boot:spring-boot-devtools") // Hot reload
+ }
+ 
