@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a35cac9f-e906-4f39-aae2-414d256df3e4" name="変更" comment="fix : idea">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/github/yukkimoru/modex/attributeSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a35cac9f-e906-4f39-aae2-414d256df3e4" name="変更" comment="add : sqlとfrontendの連携">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/SQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/SQL/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/SQL/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/DataPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/DataPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,12 +63,12 @@
     &quot;assignee&quot;: &quot;YukkiMoru&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/YukkiMoru/Modex&quot;,
-    &quot;accountId&quot;: &quot;a3c264cb-c6b7-40e6-b92f-cec44f517614&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/YukkiMoru/Modex.git",
+    "accountId": "a3c264cb-c6b7-40e6-b92f-cec44f517614"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -102,6 +103,7 @@
     "Spring Boot.attributeSQL$Application.executor": "Run",
     "git-widget-placeholder": "mysql/test",
     "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Yutak/IdeaProjects/Modex/docker/docker-compose.yml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -113,6 +115,7 @@
     "project.structure.proportion": "0.21191406",
     "project.structure.side.proportion": "0.3201804",
     "settings.editor.selected.configurable": "Docker",
+    "ts.external.directory.path": "C:\\Users\\Yutak\\IdeaProjects\\Modex\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -126,7 +129,7 @@
       <recent name="C:\Users\Yutak\IdeaProjects\Modex\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.attributeSQL$Application">
+  <component name="RunManager" selected="Docker.run Mysql">
     <configuration name="attributeSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.yukkimoru.modex.attributeSQL" />
       <module name="modex.test" />
@@ -230,18 +233,18 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.run Mysql" />
         <item itemvalue="Spring Boot.attributeSQL$Application" />
         <item itemvalue="アプリケーション.attributeSQL" />
         <item itemvalue="Gradle.BackendApplicationTests.contextLoads" />
-        <item itemvalue="Docker.run Mysql" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -257,6 +260,7 @@
       <workItem from="1739171080945" duration="939000" />
       <workItem from="1739172045908" duration="3598000" />
       <workItem from="1739176948061" duration="3639000" />
+      <workItem from="1739202531580" duration="924000" />
     </task>
     <task id="LOCAL-00001" summary="fix :DataPointをclassからrecord(getX,getYなどが自動で生成される)">
       <option name="closed" value="true" />
@@ -330,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739199582037</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add : mysql debug">
+      <option name="closed" value="true" />
+      <created>1739201535471</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739201535471</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +367,9 @@
     <MESSAGE value="add : ignore" />
     <MESSAGE value="remove : ignore" />
     <MESSAGE value="fix : idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : idea" />
+    <MESSAGE value="add : mysql debug" />
+    <MESSAGE value="add : sqlとfrontendの連携" />
+    <option name="LAST_COMMIT_MESSAGE" value="add : sqlとfrontendの連携" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
