@@ -1075,7 +1075,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="292" parent="1" name="temperature">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-02-10.09:09:13</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-02-10.15:11:43</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="293" parent="1" name="mysql.infoschema">
@@ -1110,14 +1110,15 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="300" parent="298" name="recorded_at">
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    <column id="300" parent="298" name="timestamp">
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>timestamp|0s</StoredType>
+      <StoredType>datetime|0s</StoredType>
     </column>
     <column id="301" parent="298" name="temperature">
+      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>decimal(5,2 digit)|0s</StoredType>
+      <StoredType>double|0s</StoredType>
     </column>
     <index id="302" parent="298" name="PRIMARY">
       <ColNames>id</ColNames>

@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS temperature (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME NOT NULL,
+    temperature DOUBLE NOT NULL
+);

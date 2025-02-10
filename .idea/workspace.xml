@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a35cac9f-e906-4f39-aae2-414d256df3e4" name="変更" comment="remove : ignore">
+    <list default="true" id="a35cac9f-e906-4f39-aae2-414d256df3e4" name="変更" comment="fix : idea">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/SQL/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/SQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Back.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Back.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/055026ba-2a6d-4277-8d1f-7797277f44e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/055026ba-2a6d-4277-8d1f-7797277f44e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,48 +79,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.Mysql Deploy.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.SQL/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker.db: Compose デプロイ.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker: Compose デプロイ.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.run Mysql.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.backend のビルド.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Back.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mysql/test&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yutak/IdeaProjects/Modex/docker/docker-compose.yml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Front.executor&quot;: &quot;Run&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;モジュール&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.21191406&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3201804&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Docker&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Mysql Deploy.executor": "Run",
+    "Docker.SQL/Dockerfile.executor": "Run",
+    "Docker.docker.db: Compose デプロイ.executor": "Run",
+    "Docker.docker: Compose デプロイ.executor": "Run",
+    "Docker.run Mysql.executor": "Run",
+    "Gradle.backend のビルド.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Back.executor": "Run",
+    "git-widget-placeholder": "mysql/test",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Yutak/IdeaProjects/Modex/docker/docker-compose.yml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Front.executor": "Run",
+    "project.structure.last.edited": "モジュール",
+    "project.structure.proportion": "0.21191406",
+    "project.structure.side.proportion": "0.3201804",
+    "settings.editor.selected.configurable": "Docker",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yutak\IdeaProjects\Modex\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Back">
+  <component name="RunManager" selected="Docker.run Mysql">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Kotlin Scripts.KotlinSettingsScript.backend\settings.gradle.kts" />
       <method v="2">
@@ -240,7 +245,31 @@
       <option name="project" value="LOCAL" />
       <updated>1739199080696</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remove : ignore">
+      <option name="closed" value="true" />
+      <created>1739199465298</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739199465298</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix : idea">
+      <option name="closed" value="true" />
+      <created>1739199478472</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739199478472</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix : idea">
+      <option name="closed" value="true" />
+      <created>1739199582037</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739199582037</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +293,8 @@
     <MESSAGE value="Revert &quot;add Mysql&quot;&#10;&#10;This reverts commit f820e2ba" />
     <MESSAGE value="add : ignore" />
     <MESSAGE value="remove : ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove : ignore" />
+    <MESSAGE value="fix : idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix : idea" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
