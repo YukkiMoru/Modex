@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a35cac9f-e906-4f39-aae2-414d256df3e4" name="変更" comment="fix : idea">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/SQL/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/github/yukkimoru/modex/SQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/055026ba-2a6d-4277-8d1f-7797277f44e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/055026ba-2a6d-4277-8d1f-7797277f44e1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/github/yukkimoru/modex/attributeSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/backend">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -86,6 +87,9 @@
     "Docker.docker.db: Compose デプロイ.executor": "Run",
     "Docker.docker: Compose デプロイ.executor": "Run",
     "Docker.run Mysql.executor": "Run",
+    "Gradle.BackendApplicationTests.contextLoads.executor": "Run",
+    "Gradle.BackendApplicationTests.executor": "Run",
+    "Gradle.backend [:com.github.yukkimoru.modex.attributeSQL.main()].executor": "Run",
     "Gradle.backend のビルド.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -95,6 +99,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Back.executor": "Run",
+    "Spring Boot.attributeSQL$Application.executor": "Run",
     "git-widget-placeholder": "mysql/test",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Yutak/IdeaProjects/Modex/docker/docker-compose.yml",
@@ -121,7 +126,44 @@
       <recent name="C:\Users\Yutak\IdeaProjects\Modex\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.run Mysql">
+  <component name="RunManager" selected="Spring Boot.attributeSQL$Application">
+    <configuration name="attributeSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.yukkimoru.modex.attributeSQL" />
+      <module name="modex.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.yukkimoru.modex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackendApplicationTests.contextLoads" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.github.yukkimoru.modex.BackendApplicationTests.contextLoads&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Kotlin Scripts.KotlinSettingsScript.backend\settings.gradle.kts" />
       <method v="2">
@@ -132,6 +174,19 @@
       <module name="Kotlin Scripts.KotlinSettingsScript.backend\settings.gradle.kts" />
       <option name="filePath" />
       <method v="2" />
+    </configuration>
+    <configuration name="attributeSQL$Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="modex.test" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.yukkimoru.modex.attributeSQL$Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.yukkimoru.modex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="名前未設定" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
@@ -166,12 +221,18 @@
     <list>
       <item itemvalue="Docker.名前未設定" />
       <item itemvalue="Docker.run Mysql" />
+      <item itemvalue="Gradle.BackendApplicationTests.contextLoads" />
       <item itemvalue="npm.Front" />
       <item itemvalue="Spring Boot.Back" />
+      <item itemvalue="Spring Boot.attributeSQL$Application" />
+      <item itemvalue="アプリケーション.attributeSQL" />
       <item itemvalue="複合.Boot" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.attributeSQL$Application" />
+        <item itemvalue="アプリケーション.attributeSQL" />
+        <item itemvalue="Gradle.BackendApplicationTests.contextLoads" />
         <item itemvalue="Docker.run Mysql" />
       </list>
     </recent_temporary>
