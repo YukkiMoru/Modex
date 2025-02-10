@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3fbec1f-7f08-4cd4-9e69-e5f633bfd85a" name="変更" comment="add modules : backend">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/055026ba-2a6d-4277-8d1f-7797277f44e1.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="modex" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "master",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "モジュール",
+    "project.structure.proportion": "0.21191406",
+    "project.structure.side.proportion": "0.3201804"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/新規スクラッチファイル": [
+      "GitIgnore"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="npm.Front">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Kotlin Scripts.KotlinSettingsScript.backend\settings.gradle.kts" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Kotlin Scripts.KotlinSettingsScript.backend\settings.gradle.kts" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.Front" />
+      <item itemvalue="Spring Boot.Back" />
+      <item itemvalue="複合.Boot" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="add : idea settings">
+      <option name="closed" value="true" />
+      <created>1739181274840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739181274840</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add : gitginore">
+      <option name="closed" value="true" />
+      <created>1739181966254</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739181966254</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add : gitginore">
+      <option name="closed" value="true" />
+      <created>1739182030473</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739182030473</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add modules : backend">
+      <option name="closed" value="true" />
+      <created>1739182671632</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739182671632</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add : idea settings" />
+    <MESSAGE value="add : gitginore" />
+    <MESSAGE value="add modules : backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="add modules : backend" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
