@@ -52,13 +52,13 @@ function RadialGaugeComponent() {
     );
 }
 
-function LineChartComponent({ data }: { data: { x: number, y: number }[] }) {
-    const xAxisData = data.map(point => point.x);
+function LineChartComponent({ data }: { data: { x: string, y: number }[] }) {
+    const xAxisData = data.map(point => new Date(point.x));
     const seriesData = data.map(point => point.y);
 
     return (
         <LineChart
-            xAxis={[{ data: xAxisData }]}
+            xAxis={[{ data: xAxisData, scaleType: 'time' }]}
             series={[{ data: seriesData }]}
             width={600}
             height={300}
@@ -67,7 +67,7 @@ function LineChartComponent({ data }: { data: { x: number, y: number }[] }) {
 }
 
 const App = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<{ x: string, y: number }[]>([]);
     const [rawData, setRawData] = useState('');
 
     useEffect(() => {
@@ -89,19 +89,6 @@ const App = () => {
                 <pre>{rawData}</pre>
             </Container>
             <Footer />
-        {/*    <LineChart width={500} height={300} data={[*/}
-        {/*    { x: 1, y: 2 },*/}
-        {/*    { x: 2, y: 5.5 },*/}
-        {/*    { x: 3, y: 2 },*/}
-        {/*    { x: 5, y: 8.5 },*/}
-        {/*    { x: 8, y: 1.5 },*/}
-        {/*    { x: 10, y: 5 }*/}
-        {/*]}>*/}
-        {/*    <Line type="monotone" dataKey="y" stroke="#8884d8" />*/}
-        {/*    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />*/}
-        {/*    <XAxis dataKey="x" />*/}
-        {/*    <YAxis />*/}
-        {/*</LineChart>*/}
         </div>
     );
 }

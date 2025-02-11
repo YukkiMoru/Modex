@@ -1,4 +1,4 @@
 package com.github.yukkimoru.modex;
 
-public record DataPoint(int x, double y) {
+public record DataPoint(String x, double y) {
 }
