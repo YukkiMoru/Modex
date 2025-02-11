@@ -25,6 +25,11 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	developmentOnly("org.springframework.boot:spring-boot-devtools") // Hot reload
+
+	// GraalVMでPythonを使うための依存関係
+	implementation("org.graalvm.polyglot:polyglot:23.1.2")
+	implementation("org.graalvm.polyglot:python:23.1.2")
+
 }
 
 tasks.withType<Test> {
