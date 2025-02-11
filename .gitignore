@@ -3,3 +3,4 @@
 
 # ただし、runConfigurations フォルダーは追跡対象とする
 !.idea/runConfigurations/
+!.idea/vcs.xml
