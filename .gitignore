@@ -1,2 +1,5 @@
-.idea/workspace.xml
-.idea/dataSources.local.xml
+# .idea ディレクトリ全体を無視
+.idea/
+
+# ただし、runConfigurations フォルダーは追跡対象とする
+!.idea/runConfigurations/
