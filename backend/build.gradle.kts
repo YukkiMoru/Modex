@@ -19,17 +19,19 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot(バックエンド)の依存関係
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	runtimeOnly("com.mysql:mysql-connector-j")
+	// JUnit 5の依存関係
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-	developmentOnly("org.springframework.boot:spring-boot-devtools") // Hot reload
-
+	// データベース用の依存関係
+	runtimeOnly("com.mysql:mysql-connector-j")
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")
+	// ホットリロード用の依存関係
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	// GraalVMでPythonを使うための依存関係
-	implementation("org.graalvm.polyglot:polyglot:23.1.2")
-	implementation("org.graalvm.polyglot:python:23.1.2")
-
+	implementation("org.graalvm.polyglot:polyglot:24.1.2")
+	implementation("org.graalvm.python:python-language:24.1.2")
 }
 
 tasks.withType<Test> {
