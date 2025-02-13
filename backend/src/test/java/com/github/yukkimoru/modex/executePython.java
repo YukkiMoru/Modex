@@ -1,20 +1,26 @@
 package com.github.yukkimoru.modex;
 
-import org.graalvm.polyglot.Context;
-import org.graalvm.polyglot.Source;
-import org.graalvm.polyglot.Value;
-
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class executePython {
     public static void main(String[] args) {
-        try (Context context = Context.newBuilder().allowAllAccess(true).build()) {
-            File file = new File("src/test/java/com/github/yukkimoru/modex/sum.py");
-            Source source = Source.newBuilder("python", file).build();
-            Value result = context.eval(source);
-            System.out.println(result);
-        } catch (IOException e) {
+        try {
+            ProcessBuilder pb = new ProcessBuilder("python", "backend/src/main/resources/hello.py");
+            pb.redirectErrorStream(true);
+            Process process = pb.start();
+
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+
+            int exitCode = process.waitFor();
+            System.out.println("Exited with code: " + exitCode);
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
