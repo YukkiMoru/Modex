@@ -2,7 +2,7 @@
 FROM node:lts
 
 # 作業ディレクトリを設定
-WORKDIR /app
+WORKDIR /app/frontend
 
 # パッケージマネージャーのキャッシュを利用するためにpackage.jsonとpackage-lock.jsonをコピー
 COPY package*.json ./
