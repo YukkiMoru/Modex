@@ -4,7 +4,7 @@ services:
     image: ghcr.io/graalvm/graalvm-community:23
     working_dir: /app
     volumes:
-      - ./backend:/app
+      - .:/app
     ports:
       - "8080:8080"
     command: sh -c "./build/libs/your-app"

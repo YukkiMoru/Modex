@@ -1,11 +1,10 @@
-version: '3'
 services:
   frontend:
-    image: node:18
+    build: .
     working_dir: /app
     volumes:
-      - ./frontend:/app
+      - .:/app
       - /app/node_modules
     ports:
-      - "3000:3000"
-    command: sh -c "npm run dev"
+      - "9090:9090"
+    command: sh -c 'npm run dev'
