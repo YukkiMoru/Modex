@@ -1,4 +1,3 @@
-version: '3'
 services:
   backend:
     image: ghcr.io/graalvm/graalvm-community:23
@@ -7,4 +6,4 @@ services:
       - .:/app
     ports:
       - "8080:8080"
-    command: sh -c "./build/libs/your-app"
+    command: sh -c "./gradlew run"
