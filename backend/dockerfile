@@ -1,0 +1,27 @@
+# ベースイメージとして最新のGraalVM Community Editionを使用
+FROM ghcr.io/graalvm/graalvm-community:23
+
+# 必要なパッケージをインストール
+RUN microdnf install -y \
+    gcc \
+    glibc-devel \
+    zlib-devel \
+    && microdnf clean all
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
+# アプリケーションのソースコードをコピー
+COPY . /app
+
+# GraalVMのネイティブイメージツールをインストール
+RUN gu install native-image
+
+# アプリケーションをビルド
+RUN ./gradlew build
+
+# ネイティブイメージを作成
+RUN native-image -jar build/libs/your-app.jar
+
+# エントリーポイントを設定
+CMD ["./build/libs/your-app"]
