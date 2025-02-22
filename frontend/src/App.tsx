@@ -20,12 +20,14 @@ const darkTheme = createTheme({
     },
 });
 
-const Header = memo(({darkMode}: { darkMode: boolean }) => (
+const Header = memo(({darkMode, onToggleSettings, settings}: { darkMode: boolean, onToggleSettings: () => void, settings : boolean}) => (
     <AppBar position="static" sx={{backgroundColor: darkMode ? '#3f51b5' : '#650707'}}>
         <Toolbar>
-            <Typography variant="h6">
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>
                 ウェブサイトのタイトル
             </Typography>
+            <Button color="inherit" onClick={onToggleSettings}>Settings</Button>
+            <Switch checked={settings} onChange={onToggleSettings} />
         </Toolbar>
     </AppBar>
 ));
@@ -76,6 +78,7 @@ const App = () => {
     const [rawData, setRawData] = useState('');
     const [showData, setShowData] = useState(true);
     const [darkMode, setDarkMode] = useState(false);
+    const [settings, setSettings] = useState(false);
     const label = {inputProps: {'aria-label': 'Switch demo'}};
 
     const fetchData = useCallback(() => {
@@ -106,7 +109,7 @@ const App = () => {
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
             <CssBaseline/>
             <div>
-                <Header darkMode={darkMode}/>
+                <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
                 <Container>
                     <RadialGaugeComponent darkMode={darkMode}/>
                     <LineChartComponent data={data}/>
