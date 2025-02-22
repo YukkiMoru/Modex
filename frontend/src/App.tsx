@@ -65,6 +65,7 @@ const App = () => {
     const [data, setData] = useState<{ x: string, y: number }[]>([]);
     const [rawData, setRawData] = useState('');
     const [showData, setShowData] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
     const label = {inputProps: {'aria-label': 'Switch demo'}};
 
     const fetchData = useCallback(() => {
@@ -80,6 +81,14 @@ const App = () => {
         fetchData();
     }, [fetchData]);
 
+    useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    }, [darkMode]);
+
     return (
         <div>
             <Header/>
@@ -88,6 +97,7 @@ const App = () => {
                 <LineChartComponent data={data}/>
                 <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
                 <Button variant="contained" onClick={fetchData}>リロード</Button>
+                <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
                 {showData && <pre>{rawData}</pre>}
             </Container>
             <Footer/>
