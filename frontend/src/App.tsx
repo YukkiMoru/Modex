@@ -81,13 +81,15 @@ const App = () => {
     const [settings, setSettings] = useState(false);
     const label = {inputProps: {'aria-label': 'Switch demo'}};
 
-    const fetchData = useCallback(() => {
-        fetch('http://localhost:9091/api/data')
-            .then(response => response.json())
-            .then(data => {
-                setData(data);
-                setRawData(JSON.stringify(data, null, 2));
-            });
+    const fetchData = useCallback(async () => {
+        try {
+            const response = await fetch('http://localhost:9091/api/data');
+            const data = await response.json();
+            setData(data);
+            setRawData(JSON.stringify(data, null, 2));
+        } catch (error) {
+            console.error('データのフェッチに失敗しました:', error);
+        }
     }, []);
 
     useEffect(() => {
