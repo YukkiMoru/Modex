@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback, memo } from 'react';
+import {memo, useCallback, useEffect, useState} from 'react';
 import './App.css';
-import { IgrRadialGauge, IgrRadialGaugeModule } from 'igniteui-react-gauges';
-import { LineChart } from '@mui/x-charts/LineChart';
+import {IgrRadialGauge, IgrRadialGaugeModule} from 'igniteui-react-gauges';
+import {LineChart} from '@mui/x-charts/LineChart';
 import Button from '@mui/material/Button';
 import Switch from '@mui/material/Switch';
 import AppBar from '@mui/material/AppBar';
@@ -9,7 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 IgrRadialGaugeModule.register();
@@ -20,8 +20,8 @@ const darkTheme = createTheme({
     },
 });
 
-const Header = memo(({ darkMode }: { darkMode: boolean }) => (
-    <AppBar position="static" sx={{ backgroundColor: darkMode ? '#3f51b5' : '#650707' }}>
+const Header = memo(({darkMode}: { darkMode: boolean }) => (
+    <AppBar position="static" sx={{backgroundColor: darkMode ? '#3f51b5' : '#650707'}}>
         <Toolbar>
             <Typography variant="h6">
                 ウェブサイトのタイトル
@@ -40,7 +40,7 @@ const Footer = memo(() => (
     </Box>
 ));
 
-const RadialGaugeComponent = memo(({ darkMode }: { darkMode: boolean }) => (
+const RadialGaugeComponent = memo(({darkMode}: { darkMode: boolean }) => (
     <IgrRadialGauge
         height="300px"
         width="300px"
@@ -57,14 +57,14 @@ const RadialGaugeComponent = memo(({ darkMode }: { darkMode: boolean }) => (
     />
 ));
 
-const LineChartComponent = memo(({ data }: { data: { x: string, y: number }[] }) => {
+const LineChartComponent = memo(({data}: { data: { x: string, y: number }[] }) => {
     const xAxisData = data.map(point => new Date(point.x));
     const seriesData = data.map(point => point.y);
 
     return (
         <LineChart
-            xAxis={[{ data: xAxisData, scaleType: 'time' }]}
-            series={[{ data: seriesData }]}
+            xAxis={[{data: xAxisData, scaleType: 'time'}]}
+            series={[{data: seriesData}]}
             width={600}
             height={300}
         />
@@ -76,7 +76,7 @@ const App = () => {
     const [rawData, setRawData] = useState('');
     const [showData, setShowData] = useState(true);
     const [darkMode, setDarkMode] = useState(false);
-    const label = { inputProps: { 'aria-label': 'Switch demo' } };
+    const label = {inputProps: {'aria-label': 'Switch demo'}};
 
     const fetchData = useCallback(() => {
         fetch('http://localhost:9091/api/data')
@@ -104,18 +104,18 @@ const App = () => {
 
     return (
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
-            <CssBaseline />
+            <CssBaseline/>
             <div>
-                <Header darkMode={darkMode} />
+                <Header darkMode={darkMode}/>
                 <Container>
-                    <RadialGaugeComponent darkMode={darkMode} />
-                    <LineChartComponent data={data} />
-                    <Switch {...label} defaultChecked onChange={() => setShowData(!showData)} />
+                    <RadialGaugeComponent darkMode={darkMode}/>
+                    <LineChartComponent data={data}/>
+                    <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
                     <Button variant="contained" onClick={fetchData}>リロード</Button>
-                    <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+                    <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
                     {showData && <pre>{rawData}</pre>}
                 </Container>
-                <Footer />
+                <Footer/>
             </div>
         </ThemeProvider>
     );
