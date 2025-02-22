@@ -26,7 +26,6 @@ const Header = memo(({darkMode, onToggleSettings, settings}: { darkMode: boolean
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
                 ウェブサイトのタイトル
             </Typography>
-            <Button color="inherit" onClick={onToggleSettings}>Settings</Button>
             <Switch checked={settings} onChange={onToggleSettings} />
         </Toolbar>
     </AppBar>
