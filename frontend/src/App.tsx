@@ -21,7 +21,7 @@ const darkTheme = createTheme({
 });
 
 const Header = memo(({ darkMode }: { darkMode: boolean }) => (
-    <AppBar position="static" sx={{ backgroundColor: !darkMode ? '#333' : '#ff5252' }}>
+    <AppBar position="static" sx={{ backgroundColor: darkMode ? '#3f51b5' : '#650707' }}>
         <Toolbar>
             <Typography variant="h6">
                 ウェブサイトのタイトル
