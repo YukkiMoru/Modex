@@ -1,4 +1,4 @@
-import {useState, useEffect, useCallback, memo} from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import './App.css';
 import { IgrRadialGauge, IgrRadialGaugeModule } from 'igniteui-react-gauges';
 import { LineChart } from '@mui/x-charts/LineChart';
@@ -9,8 +9,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 IgrRadialGaugeModule.register();
+
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+});
 
 const Header = memo(() => (
     <AppBar position="static">
@@ -59,7 +67,6 @@ const LineChartComponent = memo(({ data }: { data: { x: string, y: number }[] })
             series={[{ data: seriesData }]}
             width={600}
             height={300}
-
         />
     );
 });
@@ -69,7 +76,7 @@ const App = () => {
     const [rawData, setRawData] = useState('');
     const [showData, setShowData] = useState(true);
     const [darkMode, setDarkMode] = useState(false);
-    const label = {inputProps: {'aria-label': 'Switch demo'}};
+    const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
     const fetchData = useCallback(() => {
         fetch('http://localhost:9091/api/data')
@@ -96,18 +103,21 @@ const App = () => {
     }, [darkMode]);
 
     return (
-        <div>
-            <Header/>
-            <Container>
-                <RadialGaugeComponent darkMode={darkMode}/>
-                <LineChartComponent data={data}/>
-                <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
-                <Button variant="contained" onClick={fetchData}>リロード</Button>
-                <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
-                {showData && <pre>{rawData}</pre>}
-            </Container>
-            <Footer/>
-        </div>
+        <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
+            <CssBaseline />
+            <div>
+                <Header />
+                <Container>
+                    <RadialGaugeComponent darkMode={darkMode} />
+                    <LineChartComponent data={data} />
+                    <Switch {...label} defaultChecked onChange={() => setShowData(!showData)} />
+                    <Button variant="contained" onClick={fetchData}>リロード</Button>
+                    <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+                    {showData && <pre>{rawData}</pre>}
+                </Container>
+                <Footer />
+            </div>
+        </ThemeProvider>
     );
 };
 
