@@ -32,7 +32,7 @@ const Footer = memo(() => (
     </Box>
 ));
 
-const RadialGaugeComponent = memo(() => (
+const RadialGaugeComponent = memo(({ darkMode }: { darkMode: boolean }) => (
     <IgrRadialGauge
         height="300px"
         width="300px"
@@ -40,10 +40,10 @@ const RadialGaugeComponent = memo(() => (
         maximumValue={100}
         value={50}
         interval={10}
-        needleBrush="DodgerBlue"
-        scaleBrush="LightGray"
-        backingBrush="White"
-        backingOutline="LightGray"
+        needleBrush={darkMode ? "Red" : "DodgerBlue"}
+        scaleBrush={darkMode ? "DarkGray" : "LightGray"}
+        backingBrush={darkMode ? "Black" : "White"}
+        backingOutline={darkMode ? "DarkGray" : "LightGray"}
     />
 ));
 
@@ -96,7 +96,7 @@ const App = () => {
         <div>
             <Header/>
             <Container>
-                <RadialGaugeComponent/>
+                <RadialGaugeComponent darkMode={darkMode}/>
                 <LineChartComponent data={data}/>
                 <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
                 <Button variant="contained" onClick={fetchData}>リロード</Button>
