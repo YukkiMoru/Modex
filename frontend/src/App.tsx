@@ -70,6 +70,7 @@ function LineChartComponent({ data }: { data: { x: string, y: number }[] }) {
 const App = () => {
     const [data, setData] = useState<{ x: string, y: number }[]>([]);
     const [rawData, setRawData] = useState('');
+    const [showData, setShowData] = useState(true);
     const label = {inputProps: {'aria-label': 'Switch demo'}};
 
     const fetchData = () => {
@@ -91,9 +92,9 @@ const App = () => {
             <Container>
                 <RadialGaugeComponent/>
                 <LineChartComponent data={data}/>
-                <Switch {...label} defaultChecked/>
-                <Button variant="contained">リロード</Button>
-                <pre>{rawData}</pre>
+                <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
+                <Button variant="contained" onClick={fetchData}>リロード</Button>
+                {showData && <pre>{rawData}</pre>}
             </Container>
             <Footer/>
         </div>
