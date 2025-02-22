@@ -20,8 +20,8 @@ const darkTheme = createTheme({
     },
 });
 
-const Header = memo(() => (
-    <AppBar position="static">
+const Header = memo(({ darkMode }: { darkMode: boolean }) => (
+    <AppBar position="static" sx={{ backgroundColor: !darkMode ? '#333' : '#ff5252' }}>
         <Toolbar>
             <Typography variant="h6">
                 ウェブサイトのタイトル
@@ -106,7 +106,7 @@ const App = () => {
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
             <CssBaseline />
             <div>
-                <Header />
+                <Header darkMode={darkMode} />
                 <Container>
                     <RadialGaugeComponent darkMode={darkMode} />
                     <LineChartComponent data={data} />
