@@ -111,9 +111,7 @@ const App = () => {
             <CssBaseline/>
             <div>
                 <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
-                <Container>
-                    <RadialGaugeComponent darkMode={darkMode}/>
-                    <LineChartComponent data={data}/>
+                <Container sx={{ position: 'absolute', top: '64px', right: 'auto', zIndex: 1 }}>
                     {settings && (
                         <div>
                             <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
@@ -121,6 +119,10 @@ const App = () => {
                             <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
                         </div>
                     )}
+                </Container>
+                <Container>
+                    <RadialGaugeComponent darkMode={darkMode}/>
+                    <LineChartComponent data={data}/>
                     {showData && <pre>{rawData}</pre>}
                 </Container>
                 <Footer/>
