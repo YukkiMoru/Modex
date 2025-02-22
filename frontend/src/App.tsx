@@ -82,10 +82,13 @@ const App = () => {
     }, [fetchData]);
 
     useEffect(() => {
+        const elements = document.querySelectorAll('.RadialGaugeComponent, .LineChartComponent, .Switch, pre');
         if (darkMode) {
             document.body.classList.add('dark-mode');
+            elements.forEach(element => element.classList.add('dark-mode'));
         } else {
             document.body.classList.remove('dark-mode');
+            elements.forEach(element => element.classList.remove('dark-mode'));
         }
     }, [darkMode]);
 

@@ -47,19 +47,11 @@ body.dark-mode {
     color: #ffffff;
 }
 
-.AppBar.dark-mode {
-    background-color: #333;
+.RadialGaugeComponent.dark-mode, .LineChartComponent.dark-mode {
+    background-color: #2e2e2e;
+    border: 1px solid #444;
 }
 
-.Container.dark-mode {
-    background-color: #1e1e1e;
-}
-
-.Button.dark-mode {
-    background-color: #444;
+.Switch.dark-mode {
     color: #fff;
-}
-
-.Footer.dark-mode {
-    color: #bbb;
 }
