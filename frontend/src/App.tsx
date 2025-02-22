@@ -41,9 +41,11 @@ const RadialGaugeComponent = memo(({ darkMode }: { darkMode: boolean }) => (
         value={50}
         interval={10}
         needleBrush={darkMode ? "Red" : "DodgerBlue"}
-        scaleBrush={darkMode ? "DarkGray" : "LightGray"}
-        backingBrush={darkMode ? "Black" : "White"}
-        backingOutline={darkMode ? "DarkGray" : "LightGray"}
+        needleOutline={darkMode ? "Red" : "DodgerBlue"}
+        scaleBrush={darkMode ? "LightGray" : "LightGray"}
+        backingBrush={darkMode ? "#3c3f41" : "White"}
+        backingOutline={darkMode ? "LightGray" : "LightGray"}
+        fontBrush={darkMode ? "White" : "Black"}
     />
 ));
 
