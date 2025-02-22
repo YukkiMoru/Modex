@@ -114,9 +114,13 @@ const App = () => {
                 <Container>
                     <RadialGaugeComponent darkMode={darkMode}/>
                     <LineChartComponent data={data}/>
-                    <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
-                    <Button variant="contained" onClick={fetchData}>リロード</Button>
-                    <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
+                    {settings && (
+                        <div>
+                            <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
+                            <Button variant="contained" onClick={fetchData}>リロード</Button>
+                            <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
+                        </div>
+                    )}
                     {showData && <pre>{rawData}</pre>}
                 </Container>
                 <Footer/>
