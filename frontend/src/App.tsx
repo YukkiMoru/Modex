@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState, useEffect} from 'react';
 import './App.css';
 import { IgrRadialGauge, IgrRadialGaugeModule } from 'igniteui-react-gauges';
 import { LineChart } from '@mui/x-charts/LineChart';
@@ -70,7 +70,7 @@ function LineChartComponent({ data }: { data: { x: string, y: number }[] }) {
 const App = () => {
     const [data, setData] = useState<{ x: string, y: number }[]>([]);
     const [rawData, setRawData] = useState('');
-    const label = { inputProps: { 'aria-label': 'Switch demo' } };
+    const label = {inputProps: {'aria-label': 'Switch demo'}};
 
     const fetchData = () => {
         fetch('http://localhost:9091/api/data')
@@ -81,19 +81,23 @@ const App = () => {
             });
     };
 
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <div>
-            <Header />
+            <Header/>
             <Container>
-                <RadialGaugeComponent />
-                <LineChartComponent data={data} />
-                <Switch {...label} defaultChecked />
-                <Button variant="contained" onClick={fetchData}>リロード</Button>
+                <RadialGaugeComponent/>
+                <LineChartComponent data={data}/>
+                <Switch {...label} defaultChecked/>
+                <Button variant="contained">リロード</Button>
                 <pre>{rawData}</pre>
             </Container>
-            <Footer />
+            <Footer/>
         </div>
     );
-}
+};
 
 export default App;
