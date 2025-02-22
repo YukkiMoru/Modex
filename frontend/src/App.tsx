@@ -59,6 +59,7 @@ const LineChartComponent = memo(({ data }: { data: { x: string, y: number }[] })
             series={[{ data: seriesData }]}
             width={600}
             height={300}
+
         />
     );
 });
