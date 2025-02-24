@@ -5,3 +5,10 @@ body.dark-mode {
     background-color: #3c3f41;
     color: #ffffff;
 }
+
+/* 左寄せのスタイル */
+.left-align {
+    text-align: left;
+    margin: 10px; /* 余白をリセット */
+    padding: 10px; /* パディングをリセット */
+}

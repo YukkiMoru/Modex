@@ -107,9 +107,9 @@ const App = () => {
 
     return (
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
-            <div>
+            <div className="left-align">
                 <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
-                <Container sx={{ position: 'left', top: '64px', right: '100px', zIndex: 1 }}>
+                <Container sx={{ position: 'fixed', left: 0, top: '64px', right: '100px', zIndex: 1 }}>
                     {settings && (
                         <div>
                             <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
