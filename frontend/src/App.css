@@ -1,43 +1,7 @@
 /* App.css */
 
-/* 全体のスタイル */
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* コンテナのスタイル */
-.Container {
-    padding: 20px;
-}
-
-/* ボタンのスタイル */
-.Button {
-    margin-top: 20px;
-}
-
-/* スイッチのスタイル */
-.Switch {
-    margin: 20px 0;
-}
-
-/* フッターのスタイル */
-.Footer {
-    margin-top: 50px;
-    text-align: center;
-    color: #888;
-}
-
-/* グラフのスタイル */
-.RadialGaugeComponent, .LineChartComponent {
-    margin: 20px 0;
-}
-
 /* ダークモードのスタイル */
 body.dark-mode {
     background-color: #3c3f41;
     color: #ffffff;
 }
-

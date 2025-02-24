@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 
 IgrRadialGaugeModule.register();
 
@@ -76,7 +75,7 @@ const App = () => {
     const [data, setData] = useState<{ x: string, y: number }[]>([]);
     const [rawData, setRawData] = useState('');
     const [showData, setShowData] = useState(true);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
     const [settings, setSettings] = useState(false);
     const label = {inputProps: {'aria-label': 'Switch demo'}};
 
@@ -108,10 +107,9 @@ const App = () => {
 
     return (
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
-            <CssBaseline/>
             <div>
                 <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
-                <Container sx={{ position: 'absolute', top: '64px', right: 'auto', zIndex: 1 }}>
+                <Container sx={{ position: 'left', top: '64px', right: '100px', zIndex: 1 }}>
                     {settings && (
                         <div>
                             <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
