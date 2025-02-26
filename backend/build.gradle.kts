@@ -25,6 +25,8 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	developmentOnly("org.springframework.boot:spring-boot-devtools") // Hot reload
+
+	implementation(files("C:/Program Files/MATLAB/R2024a/extern/engines/java/jar/engine.jar"))
 }
 
 tasks.withType<Test> {
