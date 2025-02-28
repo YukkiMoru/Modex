@@ -109,9 +109,8 @@ const App = () => {
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
             <div className="left-align">
                 <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
-                <div className="setting-gui">
                     {settings && (
-                        <Container className="GUIBlock">
+                        <Container className="setting-gui" sx={{ width: '300px', marginLeft: 'auto', marginRight: 0}}>
                             <Button variant="contained" onClick={fetchData}>リロード</Button><br/>
                             <Switch {...label} checked={showData}
                                     onChange={(e) => setShowData(e.target.checked)}/> API詳細情報<br/>
@@ -119,7 +118,6 @@ const App = () => {
                                     onChange={(e) => setDarkMode(e.target.checked)}/> ダークモード
                         </Container>
                     )}
-                </div>
                 <Container>
                     <RadialGaugeComponent darkMode={darkMode}/>
                     <LineChartComponent data={data}/>
