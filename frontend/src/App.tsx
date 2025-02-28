@@ -110,15 +110,15 @@ const App = () => {
             <div className="left-align">
                 <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
                 <div className="setting-gui">
-                    <Container>
-                        {settings && (
+                    {settings && (
+                        <Container className="GUIBlock">
                             <div>
                                 <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
                                 <Button variant="contained" onClick={fetchData}>リロード</Button>
                                 <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
                             </div>
-                        )}
-                    </Container>
+                        </Container>
+                    )}
                 </div>
                 <Container>
                     <RadialGaugeComponent darkMode={darkMode}/>

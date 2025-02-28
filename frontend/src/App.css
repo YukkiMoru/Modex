@@ -17,3 +17,10 @@ body.dark-mode {
 .setting-gui {
     text-align: right;
 }
+
+/* GUI */
+.GUIBlock {
+    margin: 10px;
+    padding: 10px;
+    background-color: #4f60bb;
+}
