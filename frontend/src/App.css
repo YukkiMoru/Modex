@@ -12,3 +12,8 @@ body.dark-mode {
     margin: 10px; /* 余白をリセット */
     padding: 10px; /* パディングをリセット */
 }
+
+/* 詳細設定 */
+.setting-gui {
+    text-align: right;
+}

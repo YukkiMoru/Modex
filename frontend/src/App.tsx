@@ -23,7 +23,7 @@ const Header = memo(({darkMode, onToggleSettings, settings}: { darkMode: boolean
     <AppBar position="static" sx={{backgroundColor: darkMode ? '#3f51b5' : '#650707'}}>
         <Toolbar>
             <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                ウェブサイトのタイトル
+                Modex
             </Typography>
             <Switch checked={settings} onChange={onToggleSettings} />
         </Toolbar>
@@ -109,15 +109,17 @@ const App = () => {
         <ThemeProvider theme={darkMode ? darkTheme : createTheme()}>
             <div className="left-align">
                 <Header darkMode={darkMode} onToggleSettings={() => setSettings(!settings)} settings={settings}/>
-                <Container sx={{ position: 'fixed', left: 0, top: '64px', right: '100px', zIndex: 1 }}>
-                    {settings && (
-                        <div>
-                            <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
-                            <Button variant="contained" onClick={fetchData}>リロード</Button>
-                            <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
-                        </div>
-                    )}
-                </Container>
+                <div className="setting-gui">
+                    <Container>
+                        {settings && (
+                            <div>
+                                <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
+                                <Button variant="contained" onClick={fetchData}>リロード</Button>
+                                <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
+                            </div>
+                        )}
+                    </Container>
+                </div>
                 <Container>
                     <RadialGaugeComponent darkMode={darkMode}/>
                     <LineChartComponent data={data}/>
