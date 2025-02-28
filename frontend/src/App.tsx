@@ -112,11 +112,11 @@ const App = () => {
                 <div className="setting-gui">
                     {settings && (
                         <Container className="GUIBlock">
-                            <div>
-                                <Switch {...label} defaultChecked onChange={() => setShowData(!showData)}/>
-                                <Button variant="contained" onClick={fetchData}>リロード</Button>
-                                <Switch {...label} defaultChecked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
-                            </div>
+                            <Button variant="contained" onClick={fetchData}>リロード</Button><br/>
+                            <Switch {...label} checked={showData}
+                                    onChange={(e) => setShowData(e.target.checked)}/> API詳細情報<br/>
+                            <Switch {...label} checked={darkMode}
+                                    onChange={(e) => setDarkMode(e.target.checked)}/> ダークモード
                         </Container>
                     )}
                 </div>
