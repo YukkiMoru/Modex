@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: temperature
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../backend/SQL:/docker-entrypoint-initdb.d

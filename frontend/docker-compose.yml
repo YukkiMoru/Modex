@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/frontend
+    volumes:
+      - .:/app/frontend
+      - /app/frontend/node_modules
+    ports:
+      - "9090:9090"
+    command: sh -c 'npm run dev'

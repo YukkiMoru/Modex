@@ -1,0 +1,9 @@
+services:
+  backend:
+    image: ghcr.io/graalvm/graalvm-community:23
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    command: sh -c "./gradlew run"

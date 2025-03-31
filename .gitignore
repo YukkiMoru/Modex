@@ -1,6 +1,2 @@
 # .idea ディレクトリ全体を無視
 .idea/
-
-# ただし、runConfigurations フォルダーは追跡対象とする
-!.idea/runConfigurations/
-!.idea/vcs.xml
